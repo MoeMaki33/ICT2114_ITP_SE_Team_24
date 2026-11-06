@@ -1,0 +1,14 @@
+# Apache 2.4: DocumentRoot must be www/, with AllowOverride enabled.
+Options -Indexes
+RewriteEngine On
+
+# Deny dotfiles at any depth and non-public development/data directories.
+RewriteRule (^|/)\. - [F,L]
+RewriteRule (^|/)(scripts|data|node_modules)(/|$) - [F,L,NC]
+
+# GET-only alias of /api/v1/readings/ (docs/week9/readings-api.md); the query string is kept.
+RewriteRule ^api/readings/?$ api/readings.php [L]
+
+<FilesMatch "(?i)(^\.|\.(sql|xlsx|csv)$)">
+    Require all denied
+</FilesMatch>

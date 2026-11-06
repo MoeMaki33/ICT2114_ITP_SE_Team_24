@@ -1,0 +1,42 @@
+.DS_Store
+Thumbs.db
+
+.idea/
+.vscode/
+
+node_modules/
+www/node_modules/
+
+# Secrets (service-role key etc.) are never committed; only the examples are.
+.env
+.env.*
+www/.env
+www/.env.*
+!.env.example
+!www/.env.example
+
+# Supabase: config.toml, migrations/, functions/, seed.sql, tests/ and
+# legacy-sql/ are tracked. Only the CLI's local state is ignored.
+supabase/.temp/
+supabase/.branches/
+
+# Client spreadsheets and exports stay local (CLAUDE.md, security rules).
+/data/
+
+www/js/app-config.local.js
+
+www/data/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local validation tools, server config/logs and redacted scan reports.
+/.validation/
+/output/
+/tmp/
+
+# Visual regression shots: taken against a real Supabase project, so they may
+# contain client data, and they are large binaries. Keep them local.
+tests/visual/

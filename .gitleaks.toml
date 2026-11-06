@@ -1,0 +1,20 @@
+title = "Corrosion monitoring secret scan"
+
+[extend]
+useDefault = true
+
+# Supabase publishable keys are intentionally shipped to browsers. Keep all
+# default secret rules; do not allow sb_secret or legacy service_role JWTs.
+[[allowlists]]
+description = "Supabase publishable browser keys (public by design)"
+regexTarget = "secret"
+regexes = ['''^sb_publishable_[A-Za-z0-9_-]+$''']
+
+[[allowlists]]
+description = "Ignore documentation-only staging key placeholders"
+# Matches the whole line, so only lines with the literal placeholder are
+# skipped. Do not add `paths`: gitleaks 8.30 then ignores those whole files.
+regexTarget = "line"
+regexes = [
+  '''SUPABASE_PUBLISHABLE_KEY=<staging key>'''
+]

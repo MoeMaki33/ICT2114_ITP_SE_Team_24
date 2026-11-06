@@ -1,0 +1,348 @@
+{
+  "manifestVersion": "weekly_summary_cleanup_v1",
+  "auditedAt": "2026-07-19",
+  "projectId": "pscwapylbjvulvsszdur",
+  "branch": "refine-weekly-summary-user-flow",
+  "reviewedCommit": "e988df335ed4aca4d97bfa56a2bca0a21ccbb255",
+  "safetyRules": {
+    "deleteRawReadings": false,
+    "deleteReadingBatches": false,
+    "deleteUsers": false,
+    "weakenRls": false,
+    "preserveHistoricalJalanBanReadings": true,
+    "ambiguousRecords": "retain"
+  },
+  "historicalJalanBanPreservationBaseline": [
+    {
+      "id": "135c1e2b-b724-4403-8907-c2b6e815ff3b",
+      "existingLabel": "TestPoint1",
+      "proposedLabel": "JBN-TP-001",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 3033,
+      "earliestReadingTs": "2026-02-10T09:20:00Z",
+      "latestReadingTs": "2026-03-30T02:15:00Z",
+      "proposedAction": "retain_uuid_rename_and_assign_active_engineer",
+      "reason": "Historical Jalan Ban data; UUID and every existing reading must be preserved."
+    },
+    {
+      "id": "31f570b6-a24a-4bba-a875-06f5d9eb40b6",
+      "existingLabel": "TestPoint2",
+      "proposedLabel": "JBN-TP-002",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 3033,
+      "earliestReadingTs": "2026-02-10T09:20:00Z",
+      "latestReadingTs": "2026-03-30T02:15:00Z",
+      "proposedAction": "retain_uuid_rename_and_assign_active_engineer",
+      "reason": "Historical Jalan Ban data; UUID and every existing reading must be preserved."
+    },
+    {
+      "id": "6995cf3f-a817-4e1e-bc60-fe472eb38dbe",
+      "existingLabel": "TestPoint3",
+      "proposedLabel": "JBN-TP-003",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 3033,
+      "earliestReadingTs": "2026-02-10T09:20:00Z",
+      "latestReadingTs": "2026-03-30T02:15:00Z",
+      "proposedAction": "retain_uuid_rename_and_assign_active_engineer",
+      "reason": "Historical Jalan Ban data; UUID and every existing reading must be preserved."
+    },
+    {
+      "id": "fda4550e-ab01-420f-b868-3ff3030f3915",
+      "existingLabel": "TestPoint4",
+      "proposedLabel": "JBN-TP-004",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 3033,
+      "earliestReadingTs": "2026-02-10T09:20:00Z",
+      "latestReadingTs": "2026-03-30T02:15:00Z",
+      "proposedAction": "retain_uuid_rename_and_assign_active_engineer",
+      "reason": "Historical Jalan Ban data; UUID and every existing reading must be preserved."
+    }
+  ],
+  "retainedDemoProfilePoints": [
+    {
+      "id": "71bfcb59-4d46-4f4e-aa69-82a9dd0f2116",
+      "entityType": "test_point",
+      "existingValue": "Jalan Besar / TestPoint1",
+      "proposedValue": "Jalan Besar / JBS-TP-001",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0,
+      "proposedAction": "rename_mark_synthetic_and_assign_active_engineer",
+      "reason": "Meaningful retained Location; empty development point is suitable for an explicitly synthetic profile."
+    },
+    {
+      "id": "9ceff82f-c341-4882-be40-60d7797b1e75",
+      "entityType": "test_point",
+      "existingValue": "Jalan Besar / TestPoint2",
+      "proposedValue": "Jalan Besar / JBS-TP-002",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0,
+      "proposedAction": "rename_mark_synthetic_and_assign_active_engineer",
+      "reason": "Meaningful retained Location; empty development point is suitable for an explicitly synthetic profile."
+    },
+    {
+      "id": "747b4a41-6211-4dd4-a5e8-cd3316a2f751",
+      "entityType": "test_point",
+      "existingValue": "Pipeline A - North / TP-001",
+      "proposedValue": "Pipeline A - North / PAN-TP-001",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0,
+      "proposedAction": "rename_mark_synthetic_and_assign_active_engineer",
+      "reason": "Existing meaningful empty point; retained coordinates are not changed."
+    },
+    {
+      "id": "e8ec011c-85fa-493e-80d1-d5341e30d400",
+      "entityType": "test_point",
+      "existingValue": "Pipeline A - North / TP-002",
+      "proposedValue": "Pipeline A - North / PAN-TP-002",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0,
+      "proposedAction": "rename_mark_synthetic_and_assign_active_engineer",
+      "reason": "Existing meaningful empty point; retained coordinates are not changed."
+    }
+  ],
+  "testPointsToDeactivate": [
+    {
+      "id": "86ff03e8-8e44-4056-8985-2916d3f0329f",
+      "entityType": "test_point",
+      "existingValue": "1 / 1",
+      "proposedAction": "deactivate_preserve_history",
+      "reason": "Placeholder Location and label.",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 2
+    },
+    {
+      "id": "ee6c86f2-988a-455c-bfe8-6870050086b1",
+      "entityType": "test_point",
+      "existingValue": "1 / 2",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder Location and label.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "c0ff9adb-15e9-40d8-8985-737a670d6f52",
+      "entityType": "test_point",
+      "existingValue": "2 / 2",
+      "proposedAction": "deactivate_preserve_history",
+      "reason": "Placeholder Location and label; small development history is retained for auditability.",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 19
+    },
+    {
+      "id": "e95fccc5-abe4-4778-8d53-77aa16c820cb",
+      "entityType": "test_point",
+      "existingValue": "2 / 23",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder Location and numeric label.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "12f835e5-ce41-4db7-bf91-7e628077a314",
+      "entityType": "test_point",
+      "existingValue": "2 / 3",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder Location and label.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "ddd3987f-5f3e-49ca-8a5a-3e168b8d9757",
+      "entityType": "test_point",
+      "existingValue": "3 / 1",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder Location and label.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "8e412d79-863e-40ac-9025-c610172e5b0e",
+      "entityType": "test_point",
+      "existingValue": "3 / 3",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder Location and label.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "94769541-6486-40bd-9ed6-5be25d81751d",
+      "entityType": "test_point",
+      "existingValue": "Jalan Ban / 1",
+      "proposedAction": "deactivate",
+      "reason": "Numeric development label; no readings. Existing position is retained.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "6bf29770-f6c2-4bce-8bb1-0589fdef4e08",
+      "entityType": "test_point",
+      "existingValue": "Jalan Ban / T",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder label with no readings.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "e3c37016-a9f1-47e8-9ba0-dbc897b03bbd",
+      "entityType": "test_point",
+      "existingValue": "Jalan Ban / TestPoint10",
+      "proposedAction": "deactivate",
+      "reason": "Unverified development point with no readings; existing position is retained.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "9d2637df-6326-4fc5-b008-0f298cc05f4f",
+      "entityType": "test_point",
+      "existingValue": "Jalan Ban / TestPoint11",
+      "proposedAction": "deactivate",
+      "reason": "Unverified development point with no readings.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "34b8b6a3-6c16-4c75-af90-d7e971ec0938",
+      "entityType": "test_point",
+      "existingValue": "Jalan Ban / Testpoint12",
+      "proposedAction": "deactivate",
+      "reason": "Unverified development point with no readings.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "97e1a850-8857-481f-82d6-bf7f378eaaa5",
+      "entityType": "test_point",
+      "existingValue": "T / T",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder Location and label.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "6b015ab0-f75b-4621-9668-b8695018a0b7",
+      "entityType": "test_point",
+      "existingValue": "T / T2",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder Location and label.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "99a9d012-27c4-4edf-b2b8-3bfaade59859",
+      "entityType": "test_point",
+      "existingValue": "Test / Test",
+      "proposedAction": "deactivate_preserve_history",
+      "reason": "Placeholder Location and label; small development history is retained for auditability.",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 6
+    },
+    {
+      "id": "b52d15ee-ebdc-44ae-ac94-bfade73ed1fb",
+      "entityType": "test_point",
+      "existingValue": "Test / Test3",
+      "proposedAction": "deactivate_preserve_history",
+      "reason": "Placeholder point; the six readings, current position, and summaries are retained.",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 6
+    },
+    {
+      "id": "3edaa706-0c85-449d-8773-c610f58a33bf",
+      "entityType": "test_point",
+      "existingValue": "Test / Test33",
+      "proposedAction": "deactivate_preserve_history",
+      "reason": "Placeholder point; small development history is retained for auditability.",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 9
+    },
+    {
+      "id": "35078272-388d-4082-b5ad-b8a8d0b6def6",
+      "entityType": "test_point",
+      "existingValue": "Test2 / Test2",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder Location and label.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "6b80e418-9991-4047-b9c4-e95e009c4df1",
+      "entityType": "test_point",
+      "existingValue": "Test2 / Test23",
+      "proposedAction": "deactivate",
+      "reason": "Placeholder Location and label.",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    }
+  ],
+  "locationActions": [
+    {
+      "id": "f5b1ed29-cd62-4b14-ac2e-dd88109fa08e",
+      "existingValue": "Jalan Ban at (2,2)",
+      "proposedAction": "retain_set_unverified_coordinates_null_and_document_history",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 12132
+    },
+    {
+      "id": "2500a72e-79b1-4821-be46-d67875ecd133",
+      "existingValue": "Jalan Besar at (1,1)",
+      "proposedAction": "retain_set_unverified_coordinates_null_and_mark_demo_profile",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "88267f8b-6677-4519-950b-3d88244b6e9e",
+      "existingValue": "Pipeline A - North",
+      "proposedAction": "retain_existing_coordinates_and_mark_weekly_readings_synthetic",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "7e54fbe4-355d-4f30-8091-cad995f5a253",
+      "existingValue": "1 at (1,1)",
+      "proposedAction": "retain_without_active_points_set_coordinates_null",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 2
+    },
+    {
+      "id": "d13630aa-ae22-4978-816c-84ad8a98287b",
+      "existingValue": "2 at (2,2)",
+      "proposedAction": "retain_without_active_points_set_coordinates_null",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 19
+    },
+    {
+      "id": "ed49cb57-7aa5-4135-bbdd-fd210936d985",
+      "existingValue": "3 at (3,3)",
+      "proposedAction": "retain_without_active_points_set_coordinates_null",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "235562a3-8a68-4331-92ca-1b66d438405e",
+      "existingValue": "T at (1,1)",
+      "proposedAction": "retain_without_active_points_set_coordinates_null",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "1afd1c0a-91ea-452b-9f2e-6b166c1291a4",
+      "existingValue": "Test at (1,1)",
+      "proposedAction": "retain_without_active_points_set_coordinates_null",
+      "dependentReadingsExist": true,
+      "dependentReadingCount": 21
+    },
+    {
+      "id": "f2a2f7b5-0f24-44be-b7f3-00c29d84fb97",
+      "existingValue": "Test2 at (3,3)",
+      "proposedAction": "retain_without_active_points_set_coordinates_null",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    },
+    {
+      "id": "deterministic:md5(synthetic_weekly_summary_demo_v1:location:Demo Tank Farm - West)",
+      "existingValue": null,
+      "proposedAction": "create_clearly_identified_synthetic_location",
+      "dependentReadingsExist": false,
+      "dependentReadingCount": 0
+    }
+  ]
+}

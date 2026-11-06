@@ -1,0 +1,17 @@
+# Week 9 implementation summary
+
+Follow-up: the original XLSX blocker recorded below has been addressed with the official SheetJS 0.20.3 Node/browser distributions. See [dependency remediation](dependency-remediation.md) for scope and verification; hosted CI and browser UAT remain separate checks.
+
+24 October 2026; working branch `sprint-9-owen`. Baseline clean, 74 tests passed. Changes remain uncommitted for review; no push, PR, merge, live SQL, client message or administrative settings changed.
+
+| Task | Status | Files / result | Verification | Configuration / risk / next action |
+| --- | --- | --- | --- | --- |
+| 1 Secure ingestion | Partially implemented | `www/api/v1/readings/index.php`, `www/php/reading-validation.php`, new ingestion migration + rollback; [API schema/example/setup](readings-api.md) | 30 PHP validation cases and isolated HTTP stub cases pass | Disabled by default; owner reviews/applies migration on staging and configures HTTPS, identity scope, edge rate limits. Real persistence/summaries/atomicity/RLS/concurrency unverified; single record only; electrical fields deferred |
+| 2 Notification requirements | Pending external confirmation | [Requirements, decision log, event mapping, blocked backlog and unsent client draft](notification-requirements.md) | Inspected stub repository/config/decision register; no client confirmation claimed | Client answers event/channel/recipient/timing/retention questions; no sends/triggers enabled |
+| 3 Security hardening | Partially implemented | `security-headers.php`, session bootstrap/handshake, common/profile/history/notification rendering; [security review](security-review.md) | PHP lint, HTTP header/error tests and executable XSS cases pass | Report-only resource CSP; proxy/HSTS settings require deployment review; full route validation/RLS/browser/Excel checks outstanding |
+| 4 Quality and protection | Partially implemented | `.github/workflows/ci.yml`, `.github/dependabot.yml`, [owner protection instructions](branch-protection.md) | YAML parse/config assertions pass; immutable official action pins reviewed; npm audit fails on pre-existing high XLSX finding | No audit suppression; replacement/Excel compatibility work needed. Hosted CI/Gitleaks/actionlint not run; GitHub owner enables/verifies protection |
+| 5 Progressive testing | Partially implemented | `tests/week9-api.test.js`, `tests/week9-output.test.js`, `tests/php/*`; [test matrix](test-matrix.md) | 79/79 Node tests pass, no skips; includes 30 PHP validator cases. 26 PHP files lint | Full DB, Apache/browser and mixed-writer integration blocked/not run; detailed isolated staging procedure provided |
+
+The implementation intentionally reuses existing `create_manual_reading` and daily/weekly summary functions and leaves Excel modules intact. It does not claim shared validation has been extracted across every legacy path. New API-vs-API locking does not resolve legacy manual/Excel races, and PHP scope is not a replacement for DB-wide authorization of every exposed RPC.
+
+Release prerequisites: resolve XLSX security findings; review deployed schema and old definer permissions; run staging matrix; verify HTTPS/proxy/CSP/browser regression; approve machine-identity isolation and measurement limits; then owner approves deployment. Client notification approval and GitHub branch protection are separate external decisions and remain pending.
